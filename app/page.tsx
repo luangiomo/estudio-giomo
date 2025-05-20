@@ -1,103 +1,56 @@
-import Image from "next/image";
+import FAQ from "@/components/faq";
+import Processes from "@/components/processes";
+import Link from "next/link";
+import Projects from "@/components/projects";
+import Divider from "@/components/ui/divider";
+import About from "@/components/about";
+import Plans from "@/components/plans";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  // function formattedDate() {
+  //   const data = new Date();
+  //   const options: Intl.DateTimeFormatOptions = {
+  //     day: "2-digit",
+  //     month: "long",
+  //     year: "numeric",
+  //   };
+  //   const formattedDate = data.toLocaleDateString("pt-BR", options);
+  //   const customDate = formattedDate
+  //     .replace(/ de /g, " ")
+  //     .replace(/ (\d{4})$/, ", $1");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  //   return customDate;
+  // }
+  return (
+    <main className="max-w-7xl mx-auto w-full px-5">
+      <section className="w-full py-20">
+        {/* <p className="font-medium font-sans text-xs text-[#66697f] mb-3">
+            {formattedDate()}
+          </p> */}
+        <h1 className="font-sans font-semibold tracking-tighter text-5xl">
+          Com <span className="text-blue-500 ">identidade</span> um simples
+          olhar
+          <br /> comunica o <span className="text-blue-500 ">valor</span> da sua{" "}
+          <span className="text-blue-500 ">marca</span>.
+        </h1>
+        <Link href={"projects"}>
+          <button
+            type="button"
+            className="mt-24 w-fit font-sans px-8 py-3 rounded-full bg-zinc-200 tracking-tight font-semibold text-2xl border-2 border-transparent duration-300 transition-all cursor-pointer hover:bg-blue-500/20 hover:text-blue-500 hover:border-blue-500 hover:border-dashed"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            Destaque sua marca
+          </button>
+        </Link>
+      </section>
+      <Projects />
+      <Divider />
+      <Processes />
+      <Divider />
+      <About />
+      <Divider />
+      <Plans />
+      <Divider />
+      <FAQ />
+    </main>
   );
 }
