@@ -1,5 +1,6 @@
 import { MdCheck } from "react-icons/md";
 import Divider from "./ui/divider";
+import Link from "next/link";
 
 export default function Plans() {
   type Plan = {
@@ -7,6 +8,7 @@ export default function Plans() {
     price: number;
     itens: string[];
     main?: boolean;
+    wppLink?: string;
   };
 
   const plans: Plan[] = [
@@ -16,31 +18,35 @@ export default function Plans() {
       itens: [
         "Logotipo Principal",
         "Variação do Logotipo",
-        "Tipografias do projeto",
-        "1 Aplicação Real em 3D",
-        "Mini Manual de utilização",
-        "Suporte de 30 dias após a entrega",
+        "Tipografias da Marca",
+        "1 aplicação real em 3D",
+        "Guia Simplificado da Marca",
+        "Suporte de 7 dias após a entrega",
       ],
+      wppLink:
+        "https://api.whatsapp.com/send/?phone=5519971518502&text=Ol%C3%A1%2C+Caio%21+Me+interessei+pelo+Pacote+Essencial+e+gostaria+de+entender+como+podemos+prosseguir+com+meu+projeto.&type=phone_number&app_absent=0",
     },
     {
       name: "Pacote Avançado",
-      price: 589,
+      price: 789,
       itens: [
         "Logotipo Principal",
-        "Variação do Logotipo",
-        "Tipografias do projeto",
-        "5 a 7 Aplicação Real em 3D",
-        "Pattern Exclusivo da Marca",
-        "3 Modelos editáveis de post para rede social",
-        "Manual de Marca",
-        "Suporte de 60 dias após a entrega",
+        "Variações do Logotipo",
+        "Tipografias da Marca",
+        "5 a 7 aplicações real em 3D",
+        "Padrão Visual Exclusivo",
+        "3 Templates Editáveis para Redes Sociais",
+        "Manual de Marca Completo",
+        "Suporte de 30 dias após a entrega",
       ],
       main: true,
+      wppLink:
+        "https://api.whatsapp.com/send/?phone=5519971518502&text=Ol%C3%A1%2C+Caio%21+Me+interessei+pelo+Pacote+Avançado+e+gostaria+de+entender+como+podemos+prosseguir+com+meu+projeto.&type=phone_number&app_absent=0",
     },
   ];
 
   return (
-    <section className="w-full flex flex-col gap-20 py-20">
+    <section className="w-full flex flex-col gap-20 py-20" id="plans">
       <h2 className="font-sans font-semibold tracking-tighter text-5xl text-center">
         Chegou a <span className="text-blue-500">hora</span> de mudar a sua{" "}
         <span className="text-blue-500">marca</span>.
@@ -73,9 +79,10 @@ export default function Plans() {
                 </ul>
                 <Divider />
               </div>
-              <button
-                type="button"
-                className={`
+              <Link href={plan.wppLink ?? ""} target="_blank">
+                <button
+                  type="button"
+                  className={`
                   ${
                     plan.main
                       ? "border-transparent bg-blue-500 text-white hover:bg-blue-700"
@@ -83,9 +90,10 @@ export default function Plans() {
                   }
                 mt-6 w-full font-inter px-3 py-1.5 rounded-lg border font-medium cursor-pointer transition duration-300
                 `}
-              >
-                Comece agora
-              </button>
+                >
+                  Comece agora
+                </button>
+              </Link>
             </li>
           ))}
         </ul>

@@ -28,17 +28,17 @@ export default function Home() {
             {formattedDate()}
           </p> */}
         <h1 className="font-sans font-semibold tracking-tighter text-5xl">
-          Com <span className="text-blue-500 ">identidade</span> um simples
-          olhar
-          <br /> comunica o <span className="text-blue-500 ">valor</span> da sua{" "}
-          <span className="text-blue-500 ">marca</span>.
+          Posicione sua marca de forma
+          <br />
+          <span className="text-blue-500 ">clara, profissional e alinhada</span>
+          <br /> com o valor que seu negócio entrega.
         </h1>
-        <Link href={"projects"}>
+        <Link href={"#plans"}>
           <button
             type="button"
             className="mt-24 w-fit font-sans px-8 py-3 rounded-full bg-zinc-200 tracking-tight font-semibold text-2xl border-2 border-transparent duration-300 transition-all cursor-pointer hover:bg-blue-500/20 hover:text-blue-500 hover:border-blue-500 hover:border-dashed"
           >
-            Destaque sua marca
+            Começar meu projeto
           </button>
         </Link>
       </section>
