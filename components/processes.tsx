@@ -57,53 +57,42 @@ const processes: Process[] = [
 export default function Processes() {
   const [active, setActive] = useState<number>(0);
   return (
-    <section className="w-4/5 flex justify-between py-20 mx-auto">
+    <section className="flex justify-between py-20 mx-auto">
       <div className="flex flex-col justify-between">
-        <h2 className="font-sans font-semibold tracking-tighter text-5xl">
-          Processos <span className="text-blue-500 ">claros</span>. <br />{" "}
+        <h2 className="custom-title">
+          Processos <span className="text-blue-500 ">claros</span>.
+          <br />
           Resultados <span className="text-blue-500 ">reais</span>.
         </h2>
-
         <div>
-          <h3 className="space-x-3 font-sans font-semibold tracking-tighter text-3xl">
+          <h3 className="custom-subtitle space-x-3">
             <span>{`0${active + 1}.`}</span>
             <span>{processes.at(active)?.title}</span>
           </h3>
-          <p className="text-base text-[#66697f] font-inter">
-            {processes.at(active)?.description}
-            <br /> {processes.at(active)?.process}
-          </p>
+          <p className="custom-text">{processes.at(active)?.description}</p>
         </div>
       </div>
-      <div className="flex gap-6">
-        <ul className="flex flex-col">
-          {processes.map((process, index) => (
-            <li
-              key={process.title}
-              className={`flex gap-6 items-center px-6 py-6  rounded-xl
-                ${active === index ? "bg-zinc-100" : "bg-transparent"}
-                `}
-              onMouseEnter={() => setActive(index)}
-            >
-              <div
-                className={`aspect-square flex items-center justify-center rounded-xl cursor-pointer`}
-              >
-                <div className="flex justify-end items-center gap-3">
-                  <Image
-                    src={`/icons/${index + 1}.svg`}
-                    alt="ok"
-                    width={24}
-                    height={24}
-                  />{" "}
-                </div>
-              </div>
-              <h3 className="space-x-3 font-sans font-semibold tracking-tighter text-3xl">
-                <span>{process.title}</span>
-              </h3>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul>
+        {processes.map((process, index) => (
+          <li
+            key={process.title}
+            className={`custom-card
+              ${active === index ? "bg-zinc-100" : "bg-transparent"}`}
+            onMouseEnter={() => setActive(index)}
+          >
+            <div className="flex gap-4">
+              <Image
+                className=""
+                src={`/icons/${index + 1}.svg`}
+                alt="ok"
+                width={24}
+                height={24}
+              />
+              <h3 className="custom-subtitle">{process.title}</h3>
+            </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

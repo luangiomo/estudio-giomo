@@ -46,42 +46,37 @@ export default function Projects() {
     },
   ];
   return (
-    <section>
-      <div className="grid grid-cols-3 gap-5 w-full py-20">
-        {projects.map((project) => (
-          <div
-            key={project.name}
-            className="group relative overflow-hidden aspect-4/3 rounded-xl flex flex-col justify-end group cursor-pointer bg-black hover:opacity-80"
-          >
-            <Image
-              src={project.background}
-              alt={project.name}
-              fill
-              className="group-hover:opacity-10 transition-all duration-300"
-              style={{
-                objectFit: "cover",
-              }}
-            />
-            <div className="opacity-0 group-hover:opacity-100 z-10 flex flex-col justify-center gap-1 leading-tight font-inter translate-y-8 group-hover:-translate-y-0 py-4 px-6 transition-all duration-300">
-              <p className="font-medium text-white">{project.name}</p>
-            </div>
+    <section className="grid grid-cols-3 gap-5 w-full py-20">
+      {projects.map((project) => (
+        <div
+          key={project.name}
+          className="group relative overflow-hidden aspect-4/3 rounded-xl flex flex-col justify-end group cursor-pointer bg-black hover:opacity-80"
+        >
+          <Image
+            src={project.background}
+            alt={project.name}
+            fill
+            className="group-hover:opacity-10 transition-all duration-300"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+          <div className="opacity-0 group-hover:opacity-100 z-10 flex flex-col justify-center gap-1 leading-tight font-inter translate-y-8 group-hover:-translate-y-0 py-4 px-6 transition-all duration-300">
+            <p className="font-medium text-white">{project.name}</p>
           </div>
-        ))}
-        <div className="w-full rounded-xl border border-blue-100 bg-linear-to-b from-blue-200 to-white flex flex-col justify-end px-3">
-          <div className="flex flex-col justify-center items-center gap-1 leading-tight text-center font-inter">
-            <p className="text-[#262556] font-medium">
-              Sua marca pode ser a próxima
-            </p>
-            <p className="text-sm text-[#66697f]">
+        </div>
+      ))}
+      <div className="custom-card flex justify-center items-end">
+        <div className="flex flex-col justify-center items-center gap-6 leading-tight text-center font-inter">
+          <div>
+            <p className="custom-label">Sua marca pode ser a próxima</p>
+            <p className="custom-text-base">
               Crie uma identidade visual única e memorável.
             </p>
-            <button
-              type="button"
-              className="px-3 py-1.5 rounded-lg bg-blue-500 border border-blue-500 text-white mb-10 mt-3 font-medium hover:bg-linear-to-b hover:from-blue-500 hover:to-blue-700 cursor-pointer"
-            >
-              Comece agora
-            </button>
           </div>
+          <button type="button" className="custom-button custom-button-primary">
+            Comece agora
+          </button>
         </div>
       </div>
     </section>

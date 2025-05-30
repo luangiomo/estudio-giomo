@@ -1,10 +1,8 @@
 import Footer from "@/components/footer";
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
-import localFont from "next/font/local";
-import Link from "next/link";
-import { MdCallMade } from "react-icons/md";
 import "./globals.css";
+import Header from "@/components/header";
 
 const soraSans = Sora({
   variable: "--font-sora-sans",
@@ -13,16 +11,6 @@ const soraSans = Sora({
 const interSans = Inter({
   variable: "--font-inter-sans",
   subsets: ["latin"],
-});
-
-const coolvetica = localFont({
-  variable: "--font-coolvetiva",
-  src: "../public/Coolvetica.otf",
-});
-
-const nyghtSerif = localFont({
-  variable: "--font-nyght-serif",
-  src: "../public/NyghtSerif.otf",
 });
 
 export const metadata: Metadata = {
@@ -38,23 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${soraSans.variable} ${interSans.variable} ${coolvetica.variable} ${nyghtSerif.variable} antialiased`}
+        className={`${soraSans.variable} ${interSans.variable} antialiased`}
       >
-        <header className="sticky top-0 z-50 flex justify-between items-center bg-white w-full mx-auto max-w-7xl px-5 py-4">
-          <Link href={"/"}>
-            <h1 className="font-sans text-xl font-bold tracking-tighter">
-              Estúdio Giomo
-            </h1>
-          </Link>
-          <Link href={"/"}>
-            <span className="flex items-center gap-1 group">
-              <h3 className="font-inter text-base font-medium group-hover:underline">
-                Entre em contato
-              </h3>
-              <MdCallMade />
-            </span>
-          </Link>
-        </header>
+        <Header />
         {children}
         <Footer />
       </body>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { MdKeyboardArrowUp } from "react-icons/md";
 
 type FAQ = {
@@ -54,35 +54,31 @@ const frequentlyAskedQuestions: FAQ[] = [
 export default function FAQ() {
   const [active, setActive] = useState<string>("");
   return (
-    <section className="w-full flex flex-col justify-between gap-20 py-20 px-10">
-      <h2 className="font-sans font-semibold tracking-tighter text-5xl text-center">
+    <section className="w-full space-y-20 py-20">
+      <h2 className="custom-title text-center">
         Perguntas <span className="text-blue-500">frequentes</span>.
       </h2>
       <ul className="w-4/5 mx-auto">
         {frequentlyAskedQuestions.map((faq) => (
-          <li
-            className=" items-center px-6 py-4 first:border-0 border-t border-zinc-200 cursor-pointer"
-            key={faq.question}
-            onClick={() => setActive(faq.question)}
-          >
-            <div className="font-sans font-semibold tracking-tight text-xl flex justify-between gap-6">
-              <p>{faq.question}</p>
-              <MdKeyboardArrowUp
-                className={`
-                  ${active === faq.question ? "rotate-180" : "rotate-0"}
-                transition duration-300`}
-              />
-            </div>
-            <div
-              className={`
-                ${active === faq.question ? "h-fit" : "h-0"} 
-              overflow-hidden transition-[height] duration-800`}
-            >
-              <p className="font-inter text-base text-[#66697f] py-3 leading-relaxed">
-                {faq.answer}
+          <Fragment key={faq.question}>
+            <li className="custom-card" onClick={() => setActive(faq.question)}>
+              <p className="custom-label flex justify-between gap-6">
+                {faq.question}
+                <MdKeyboardArrowUp
+                  className={`${
+                    active === faq.question ? "rotate-180" : "rotate-0"
+                  }`}
+                />
               </p>
-            </div>
-          </li>
+              <div
+                className={`overflow-hidden
+                ${active === faq.question ? "h-fit" : "h-0"}`}
+              >
+                <p className="custom-text pt-6">{faq.answer}</p>
+              </div>
+            </li>
+            <hr className="custom-divider m-0 last:hidden" />
+          </Fragment>
         ))}
       </ul>
     </section>

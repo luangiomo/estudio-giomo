@@ -2,7 +2,18 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #333333;
+  --foreground: #0e0e11;
+  --primary: #59a7ff;
+  --base: #717171;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0e0e11;
+    --foreground: #f4f4f4;
+    --primary: #59a7ff;
+    --base: #a1a1a1;
+  }
 }
 
 @theme inline {
@@ -10,16 +21,40 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sora-sans);
   --font-inter: var(--font-inter-sans);
-  --font-coolvetica: var(--font-coolvetiva);
-  --font-nyght-serif: var(--font-nyght-serif);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .custom-title {
+    @apply font-sans font-semibold tracking-tight text-5xl;
   }
-} */
+  .custom-subtitle {
+    @apply font-sans font-semibold tracking-tight text-3xl;
+  }
+  .custom-label {
+    @apply font-sans font-semibold tracking-tight text-xl;
+  }
+  .custom-text {
+    @apply font-inter text-base text-[#66697f] leading-relaxed;
+  }
+  .custom-divider {
+    @apply w-full h-px my-6;
+  }
+  .custom-card {
+    @apply p-6 rounded-xl cursor-pointer;
+  }
+  .custom-gradient-vertical {
+    @apply bg-linear-to-t from-sky-500 to-indigo-500;
+  }
+  .custom-button {
+    @apply font-inter px-3 py-1.5 rounded-lg border font-medium cursor-pointer border-transparent;
+  }
+  .custom-button-lg {
+    @apply font-inter px-8 py-3 rounded-xl tracking-tight font-semibold text-2xl border border-transparent cursor-pointer;
+  }
+  .custom-button-primary {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+  }
+}
 
 body {
   background: var(--background);
