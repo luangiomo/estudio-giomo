@@ -70,7 +70,7 @@ export default function Projects() {
         <div className="flex flex-col justify-center items-center gap-6 leading-tight text-center font-inter">
           <div>
             <p className="custom-label">Sua marca pode ser a próxima</p>
-            <p className="custom-text-base">
+            <p className="custom-text">
               Crie uma identidade visual única e memorável.
             </p>
           </div>

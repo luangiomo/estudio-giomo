@@ -3,16 +3,18 @@
 :root {
   --background: #ffffff;
   --foreground: #0e0e11;
-  --primary: #59a7ff;
-  --base: #717171;
+  --primary: #2b7fff;
+  --primary-hover: #144de1;
+  --basement: #717171;
+  --subtle: #e4e4e7;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0e0e11;
     --foreground: #f4f4f4;
-    --primary: #59a7ff;
-    --base: #a1a1a1;
+    --basement: #a1a1a1;
+    --subtle: #27272a;
   }
 }
 
@@ -21,6 +23,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sora-sans);
   --font-inter: var(--font-inter-sans);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-basement: var(--basement);
+  --color-subtle: var(--subtle);
 }
 
 @layer components {
@@ -31,16 +37,16 @@
     @apply font-sans font-semibold tracking-tight text-3xl;
   }
   .custom-label {
-    @apply font-sans font-semibold tracking-tight text-xl;
+    @apply font-sans font-semibold tracking-tight text-xl text-foreground;
   }
   .custom-text {
-    @apply font-inter text-base text-[#66697f] leading-relaxed;
+    @apply font-inter text-basement leading-relaxed;
   }
   .custom-divider {
-    @apply w-full h-px my-6;
+    @apply w-full h-px my-6 bg-subtle border-0;
   }
   .custom-card {
-    @apply p-6 rounded-xl cursor-pointer;
+    @apply p-6 rounded-xl cursor-pointer bg-background;
   }
   .custom-gradient-vertical {
     @apply bg-linear-to-t from-sky-500 to-indigo-500;
@@ -52,7 +58,7 @@
     @apply font-inter px-8 py-3 rounded-xl tracking-tight font-semibold text-2xl border border-transparent cursor-pointer;
   }
   .custom-button-primary {
-    @apply bg-blue-500 text-white hover:bg-blue-600;
+    @apply bg-primary text-white hover:bg-primary-hover;
   }
 }
 

@@ -77,7 +77,7 @@ export default function Processes() {
           <li
             key={process.title}
             className={`custom-card
-              ${active === index ? "bg-zinc-100" : "bg-transparent"}`}
+              ${active === index ? "bg-subtle" : "bg-transparent"}`}
             onMouseEnter={() => setActive(index)}
           >
             <div className="flex gap-4">

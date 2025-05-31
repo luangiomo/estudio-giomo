@@ -45,10 +45,10 @@ const socials: Social[] = [
 
 export default function Footer() {
   return (
-    <footer className="w-full py-10 border-t border-[#122a6914]">
-      <nav className="max-w-7xl mx-auto flex items-center text-[#66697f]">
+    <footer className="w-full py-10 border-t border-subtle">
+      <nav className="max-w-7xl mx-auto flex items-center">
         <p className="custom-text text-sm">{`© ${new Date().getFullYear()}, Estúdio Giomo.`}</p>
-        <div className="w-px h-5 bg-[#122a6914] mx-6" />
+        <div className="w-px h-5 bg-subtle mx-6" />
         <ul className="flex gap-4">
           {socials.map((social) => (
             <Link
@@ -57,7 +57,7 @@ export default function Footer() {
               key={social.name}
               target="_blank"
             >
-              <li className="px-1 flex items-center hover:text-black">
+              <li className="px-1 flex items-center text-basement hover:text-foreground">
                 {social.icon}
               </li>
             </Link>

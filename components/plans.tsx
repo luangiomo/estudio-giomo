@@ -49,11 +49,11 @@ export default function Plans() {
         <br />
         com <span className="text-blue-500">escolhas</span> estratégicas.
       </h2>
-      <div className="bg-linear-to-b from-blue-200 to-white pt-20 rounded-2xl">
+      <div className="bg-linear-to-b from-primary to-background pt-20 rounded-2xl">
         <ul className="w-4/5 flex gap-4 mx-auto">
           {plans.map((plan) => (
             <li
-              className="custom-card bg-white flex flex-col justify-between w-full"
+              className="custom-card flex flex-col justify-between w-full"
               key={plan.name}
             >
               <div>

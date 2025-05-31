@@ -3,7 +3,7 @@ import { MdCallMade } from "react-icons/md";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 py-4 w-full bg-white">
+    <header className="sticky top-0 z-50 py-4 w-full bg-background">
       <nav className="flex justify-between items-center max-w-7xl mx-auto px-5">
         <Link href={"/"}>
           <h1 className="custom-label font-bold">Estúdio Giomo</h1>
